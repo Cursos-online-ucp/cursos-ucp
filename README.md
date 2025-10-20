@@ -12,7 +12,7 @@ Desarrollar una plataforma web tipo Udemy o Coursera enfocada en cursos de ofici
 
 ───────────────────────────────────────────────
 🚀 TECNOLOGÍAS UTILIZADAS
-Frontend: React + Vite + TypeScript
+Frontend: React + Vite + TypeScript + tailwind
 Backend: Node.js + Express + Sequelize
 Base de datos: MySQL (local o Docker)
 Repositorio: GitHub – Organización Cursos-online-ucp
