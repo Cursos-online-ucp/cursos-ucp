@@ -1,0 +1,18 @@
+{
+  "name": "cursos-ucp",
+  "version": "1.0.0",
+  "description": "Proyecto final ingenieria de software I",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "private": "true",
+  "workspaces": [
+    "apps/frontend",
+    "apps/backend",
+    "packages/shared"
+  ]
+}
