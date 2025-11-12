@@ -1,24 +1,22 @@
 import  express  from "express";
-import db from "./config/db";
+import { connectDB } from "./models";
+import dotenv from "dotenv";
 
-//conectar db
+dotenv.config();
 
-async function connectDB() {
-    try {
-        await db.authenticate()
-        db.sync()
-        console.log('conexion exitosa a DB');
-        
-    } catch (error) {
-        console.log(error);
-        console.log('Error a conectar a base de datos');
-        
-        
-    }
-}
+const app = express();
+const PORT = process.env.PORT || 3000;
 
-connectDB()
+app.use(express.json());
 
-const app = express()
+connectDB();
 
-export default app
+app.get("/", (req, res) => {
+    res.send("¡Servidor funcionando correctamente!");
+});
+
+app.listen(PORT, () => {
+    console.log(`Servidor escuchando en el puerto http://localhost:${PORT}`);
+});
+
+export default app;
