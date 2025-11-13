@@ -1,68 +1,71 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
+/* Asegura que el layout ocupe toda la ventana */
+html, body, #root {
+  height: 100%;
+  width: 100%;
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 0;
+  background-color: #f3f4f6; /* gris claro */
+  font-family: system-ui, sans-serif;
+}
+.bg-chat-pattern {
+  background-image: url("https://i.ibb.co/d4F0mCg/chat-bg-light.png");
+  background-size: cover;
+  background-repeat: repeat;
+}
+:root {
+  --color-primary: rgb(0, 128, 78);    /* Verde principal */
+  --color-secondary: rgb(216, 49, 53); /* Rojo acento */
+  --color-accent: rgb(255, 213, 37);   /* Amarillo brillante */
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* Utility classes that use the CSS variables */
+.bg-primary { background-color: var(--color-primary) !important; }
+.bg-secondary { background-color: var(--color-secondary) !important; }
+.text-accent { color: var(--color-accent) !important; }
+
+/* Button helper for the + button */
+.btn-plus {
+  padding: 0.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.125rem;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+/* Button used for the main create action (restores hover behavior using variables) */
+.btn-create {
+  background-color: var(--color-primary);
+  color: white;
 }
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.btn-create:hover {
+  background-color: var(--color-accent);
+  color: var(--color-secondary);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+/* Button used for sending messages */
+.btn-send {
+  background-color: var(--color-secondary);
+  color: white;
+}
+.btn-send:hover {
+  background-color: var(--color-primary);
+}
+
+/* Menu item base and hover using primary color */
+.menu-item {
+  color: #1f2937; /* text-gray-800 */
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+.menu-item:hover,
+.menu-item:focus {
+  background-color: var(--color-primary);
+  color: white;
 }
