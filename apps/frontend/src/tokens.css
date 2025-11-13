@@ -1,0 +1,9 @@
+@import "tailwindcss/theme" layer(theme);
+
+@theme {
+  --color-ucp-verde: #00853E;
+  --color-ucp-verde-oscuro: #006630;
+  --color-ucp-amarillo: #FFC20E;
+  --color-ucp-gris-fondo: #F5F5F5;
+}
+
